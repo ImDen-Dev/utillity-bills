@@ -6,6 +6,11 @@ import { withNgxsReduxDevtoolsPlugin } from '@ngxs/devtools-plugin';
 import { withNgxsFormPlugin } from '@ngxs/form-plugin';
 import { withNgxsRouterPlugin } from '@ngxs/router-plugin';
 import { provideStore } from '@ngxs/store';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { getAuth, provideAuth } from '@angular/fire/auth';
+import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+
+import { firebaseConfig } from './assets/environments';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -17,5 +22,8 @@ export const appConfig: ApplicationConfig = {
       withNgxsFormPlugin(),
       withNgxsRouterPlugin()
     ),
+    provideFirebaseApp(() => initializeApp(firebaseConfig)),
+    provideAuth(() => getAuth()),
+    provideFirestore(() => getFirestore()),
   ],
 };
