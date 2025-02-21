@@ -6,6 +6,6 @@ import { RouterOutlet } from '@angular/router';
   selector: 'app-main-layout',
   imports: [MatToolbar, RouterOutlet],
   templateUrl: './main-layout.component.html',
-  styleUrl: './main-layout.component.css',
+  styleUrl: './main-layout.component.scss',
 })
 export class MainLayoutComponent {}

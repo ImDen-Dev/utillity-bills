@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
+import { CounterReadingCardComponent } from '../../components/organisms/counter-reading-card/counter-reading-card.component';
 
 @Component({
   selector: 'app-home',
-  imports: [],
+  imports: [CounterReadingCardComponent],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  styleUrl: './home.component.scss',
 })
-export class HomeComponent {
-
-}
+export class HomeComponent {}
