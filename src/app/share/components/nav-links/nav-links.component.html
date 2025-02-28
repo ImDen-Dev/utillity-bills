@@ -1,0 +1,17 @@
+<div [ngClass]="containerClass()" [id]="containerId()">
+  <div [ngClass]="wrapperClass()">
+    @for (linkItem of navLinksItems(); track linkItem.link) {
+      <a
+        #linkRef="routerLinkActive"
+        routerLinkActive
+        [routerLink]="linkItem.link"
+        [ngClass]="[
+          linkClass(),
+          linkRef.isActive ? activeClass() : notActiveClass(),
+        ]"
+        [routerLinkActiveOptions]="{ exact: true }"
+        >{{ linkItem.name }}</a
+      >
+    }
+  </div>
+</div>
